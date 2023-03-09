@@ -1,0 +1,40 @@
+:root {
+  // CSS SPECIFIC VARS
+  --color-primary: #0b0d17;
+  --color-primary-rgb: rgb(11, 13, 23);
+  //
+  --color-secondary: #d0d6f9;
+  --color-secondary-rgb: rgb(208, 214, 249);
+  //
+  --color-tertiary: #ffffff;
+  --color-tertiary-rgb: rgb(255, 255, 255);
+  --color-tertiary-super-light: rgba(255, 255, 255, 0.05);
+  --color-tertiary-medium-light: rgba(255, 255, 255, 0.09);
+  --color-tertiary-light: rgba(255, 255, 255, 0.5);
+}
+
+*,
+*:link,
+*::after,
+*::before,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // font-size of 1rem = 10px
+  //   Aligning the rem size to 10px makes for a more easy calculation and implementation thereofs
+  font-size: 62.5%;
+  background-image: url(../assets/home/background-home-desktop.jpg);
+  background-clip: top;
+  background-size: cover;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  font-family: "Barlow", sans-serif;
+  color: var(--color-secondary);
+}

@@ -1,0 +1,49 @@
+.heading {
+  text-transform: uppercase;
+  font-family: "Bellefair", serif;
+  color: var(--color-tertiary);
+  &__1 {
+    font-size: 15rem;
+  }
+
+  &__2 {
+    font-size: 10rem;
+  }
+
+  &__3 {
+    font-size: 5.6rem;
+  }
+
+  &__4 {
+    font-size: 3.2rem;
+  }
+
+  &__5 {
+    font-size: 2.8rem;
+
+    &--barlow {
+      color: var(--color-tertiary);
+      letter-spacing: 0.475rem;
+      font-size: 2.8rem;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+  }
+
+  &__subheading {
+    font-size: 1.6rem;
+
+    &--barlow {
+      color: var(--color-tertiary);
+      letter-spacing: 0.235rem;
+      font-size: 1.4rem;
+      font-family: "Barlow Condensed", sans-serif;
+    }
+  }
+
+  &__nav-text {
+    color: var(--color-tertiary);
+    letter-spacing: 0.27rem;
+    font-size: 1.6rem;
+    font-family: "Barlow Condensed", sans-serif;
+  }
+}

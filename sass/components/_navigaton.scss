@@ -1,0 +1,84 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 4%;
+  margin-top: 3rem;
+  //   FOR tab mar-L is 5%
+
+  &__logo {
+    width: 4.8rem;
+  }
+
+  &__menu {
+    flex: 0 1 60%;
+    display: flex;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(40px);
+    -moz-backdrop-filter: blur(40px);
+    backdrop-filter: blur(40px);
+    // Remember, i'll need to add some media queries for browsers that do not support back-drop filter
+    background-color: var(--color-tertiary-super-light);
+
+    // Setting the postion here to enable the position absolute set on elements after pseudo element
+    position: relative;
+
+    // Design line that runs just before the menu items, only seen on Large screens (desktops)
+    &::after {
+      content: "";
+      display: table;
+      position: absolute;
+      height: 0.1px;
+      width: 60%;
+      top: 50%;
+      left: -26%;
+      transform: translate(-50%, -50%);
+      border-bottom: 2px solid var(--color-tertiary-medium-light);
+    }
+
+    &--item {
+      list-style: none;
+      padding: 3.75rem 0;
+      margin-left: 4.8rem;
+      border: 0.2rem solid transparent;
+      cursor: pointer;
+      //   This Positioning is !important because it allows for the bottom-border animation
+      position: relative;
+
+      &::before {
+        content: "";
+        display: table;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100%);
+        height: calc(100% + 2px);
+        z-index: -1;
+        transform: scaleX(0);
+        transform-origin: left;
+
+        transition: transform 0.2s;
+      }
+
+      // Hover Effect when an navigation item is hovered
+      &:hover {
+        &::before {
+          transform: scaleX(1);
+          border-bottom: 0.2rem solid var(--color-tertiary-light);
+        }
+      }
+      // Extending hover effect to Text
+      &:hover &--link {
+        color: var(--color-tertiary-light);
+      }
+
+      &--link {
+        &:link,
+        &:visited {
+          color: var(--color-tertiary);
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
