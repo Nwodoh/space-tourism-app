@@ -1,0 +1,60 @@
+// Code for our home call to action btn
+.cta {
+  // Radius Variable
+  --lenght-radius: 24.7rem;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--lenght-radius);
+  height: var(--lenght-radius);
+  border-radius: 50%;
+  letter-spacing: 0.2rem;
+  color: var(--color-primary);
+  background-color: white;
+  cursor: pointer;
+
+  &:link,
+  :visited,
+  :active {
+    text-decoration: none;
+  }
+
+  &::after {
+    @include pseudoDrying;
+    @include centerByTransform;
+    @include ctaAction(var(--color-tertiary-light));
+  }
+
+  //   &::before {
+  //     @include pseudoDrying;
+  //     @include centerByTransform;
+  //     @include ctaAction(var(--color-tertiary));
+  //     transition: width 0.2s, height 0.2s, opacity 0.5s;
+  //   }
+
+  //This happens to the after PC when the cta is hovered
+  &:hover {
+    &::after {
+      //   transform: scale(1.5);
+      width: calc(var(--lenght-radius) * 1.62);
+      height: calc(var(--lenght-radius) * 1.62);
+      opacity: 0.4;
+    }
+  }
+
+  //This happens to the after PC when the cta is active
+  &:active {
+    &::after {
+      background-color: white;
+    }
+    // &::before {
+    //   width: calc(var(--lenght-radius) * 1.62);
+    //   height: calc(var(--lenght-radius) * 1.62);
+    //   opacity: 1;
+    // }
+  }
+}

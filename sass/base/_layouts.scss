@@ -1,4 +1,23 @@
-.duo-flex {
+// Code for all sections
+.section {
   display: flex;
-  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0 8%;
+
+  &__home {
+    &--duo-1 {
+      & h1 {
+        margin: 2.4rem 0;
+      }
+    }
+
+    &--duo-2 {
+      position: relative;
+    }
+  }
+
+  &__duo {
+    flex: 0 1;
+  }
 }

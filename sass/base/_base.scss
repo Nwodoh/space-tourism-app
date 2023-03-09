@@ -28,13 +28,10 @@ html {
   //   Aligning the rem size to 10px makes for a more easy calculation and implementation thereofs
   font-size: 62.5%;
   background-image: url(../assets/home/background-home-desktop.jpg);
-  background-clip: top;
   background-size: cover;
+  background-clip: top;
 }
 
 body {
   box-sizing: border-box;
-  font-size: 1.8rem;
-  font-family: "Barlow", sans-serif;
-  color: var(--color-secondary);
 }
