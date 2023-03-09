@@ -1,0 +1,14 @@
+{
+  "name": "space-tourism",
+  "version": "1.0.0",
+  "description": "An app for space tourists. And a challenge from frontend mentor",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/style.css -w"
+  },
+  "author": "Daniel Nwodoh",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.58.3"
+  }
+}
