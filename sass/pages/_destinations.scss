@@ -1,0 +1,14 @@
+.destination {
+  // Menu ond destionations page
+  &__menu {
+    @extend %menuBluePrint;
+    @extend %menuBluePrint;
+
+    &--item {
+      @extend %menuBluePrint--item;
+    }
+  }
+
+  &__duo--1 {
+  }
+}

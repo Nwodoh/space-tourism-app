@@ -8,5 +8,9 @@
 @import "base/layouts";
 
 // COMPONENTS
-@import "components/navigaton";
 @import "components/cta";
+@import "components/navigaton";
+
+// Pages
+@import "pages/home";
+@import "pages/destinations";

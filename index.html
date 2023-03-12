@@ -11,14 +11,15 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./assets/favicon-32x32.png"
     />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/controller.js" type="module"></script>
 
     <title>Frontend Mentor | Space tourism website</title>
   </head>
@@ -31,34 +32,89 @@
           title="logo"
           class="nav__logo"
         />
-        <ul class="nav__menu">
-          <li class="nav__menu--item heading__nav-text">
-            <a href="#" class="nav__menu--item--link"
-              ><span class="high-font-weight">00</span> Home</a
+        <ul class="nav__menu heading__nav-text">
+          <li class="nav__menu--item">
+            <a
+              href="#"
+              class="nav__menu--link nav__menu--link-active"
+              data-page-name="home"
+              ><span class="bold-numbers">00</span> Home</a
             >
           </li>
-          <li class="nav__menu--item heading__nav-text">
-            <a href="#" class="nav__menu--item--link"
-              ><span class="high-font-weight">01</span> Destination</a
+          <li class="nav__menu--item">
+            <a href="#" class="nav__menu--link" data-page-name="destinations"
+              ><span class="bold-numbers">01</span> Destination</a
             >
           </li>
-          <li class="nav__menu--item heading__nav-text">
-            <a href="#" class="nav__menu--item--link"
-              ><span class="high-font-weight">02</span> Crew</a
+          <li class="nav__menu--item">
+            <a href="#" class="nav__menu--link" data-page-name="crew"
+              ><span class="bold-numbers">02</span> Crew</a
             >
           </li>
-          <li class="nav__menu--item heading__nav-text">
-            <a href="#" class="nav__menu--item--link"
-              ><span class="high-font-weight">03</span> Technology</a
+          <li class="nav__menu--item">
+            <a href="#" class="nav__menu--link" data-page-name="technology"
+              ><span class="bold-numbers">03</span> Technology</a
             >
           </li>
         </ul>
       </nav>
     </head>
     <main>
-      <section class="section section__home">
-        <div class="section__duo section__home--duo-1">
-          <h6 class="heading heading__5--barlow">
+      <section class="section section__heading">
+        <div class="heading heading__5--barlow">
+          <span class="bold-numbers bold-numbers__dark bold-numbers__heading"
+            >01</span
+          >
+          pick your destination
+        </div>
+      </section>
+      <section class="page-content">
+        <section class="section destination">
+          <div class="section__duo destination__duo--1">
+            <img
+              src="assets/destination/image-moon.png"
+              alt="Image of the moon"
+              title="Image of the moon"
+            />
+          </div>
+          <div class="section__duo destination__duo--2">
+            <ul class="destination__menu heading heading__nav-text">
+              <li class="destination__menu--item">
+                <a href="#" class="destination__menu--link">moon</a>
+              </li>
+              <li class="destination__menu--item">
+                <a href="#" class="destination__menu--link">mars</a>
+              </li>
+              <li class="destination__menu--item">
+                <a href="#" class="destination__menu--link">europa</a>
+              </li>
+              <li class="destination__menu--item">
+                <a href="#" class="destination__menu--link">titan</a>
+              </li>
+            </ul>
+            <h2 class="heading heading__2">moon</h2>
+            <p>
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+            <div>
+              <div>
+                <span>Avg. distance</span>
+                <span>384,400 km</span>
+              </div>
+              <div>
+                <span>Est. travel time</span>
+                <span>3 days</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section class="section home
+        <div class="section__duo home__duo--1">
+          <h6 class="heading heading__5--barlow heading__5--barlow-home">
             So, you want to travel to
             <h1 class="heading heading__1">Space</h1>
           </h6>
@@ -69,9 +125,10 @@
             world experience!
           </p>
         </div>
-        <div class="section__duo section__home--duo-2">
+        <div class="section__duo home__duo--2">
           <a href="#" class="heading heading__4 cta">Explore</a>
         </div>
+      </section> -->
       </section>
     </main>
   </body>

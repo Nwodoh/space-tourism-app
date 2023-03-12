@@ -10,7 +10,13 @@
   --color-tertiary-rgb: rgb(255, 255, 255);
   --color-tertiary-super-light: rgba(255, 255, 255, 0.05);
   --color-tertiary-medium-light: rgba(255, 255, 255, 0.09);
+  --color-tertiary-custom-light: rgba(255, 255, 255, 0.25);
   --color-tertiary-light: rgba(255, 255, 255, 0.5);
+}
+
+::selection {
+  color: var(--color-primary);
+  background-color: var(--color-tertiary);
 }
 
 *,

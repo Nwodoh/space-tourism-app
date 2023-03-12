@@ -11,9 +11,11 @@
   }
 
   &__menu {
-    flex: 0 1 60%;
-    display: flex;
+    @extend %menuBluePrint;
+    @extend %menuBluePrint--flat;
+
     justify-content: center;
+    flex: 0 1 60%;
     -webkit-backdrop-filter: blur(40px);
     -moz-backdrop-filter: blur(40px);
     backdrop-filter: blur(40px);
@@ -25,10 +27,9 @@
 
     // Design line that runs just before the menu items, only seen on Large screens (desktops)
     &::after {
-      content: "";
-      display: table;
+      @include pseudoDrying();
       position: absolute;
-      height: 0.1px;
+      height: 0px;
       width: 60%;
       top: 50%;
       left: -26%;
@@ -37,47 +38,57 @@
     }
 
     &--item {
-      list-style: none;
+      @extend %menuBluePrint--item;
       padding: 3.75rem 0;
       margin-left: 4.8rem;
-      border: 0.2rem solid transparent;
-      cursor: pointer;
-      //   This Positioning is !important because it allows for the bottom-border animation
+    }
+    &--link {
+      border-bottom: 0.2rem solid transparent;
+
+      //This Positioning is !important because it allows for the bottom-border animation
       position: relative;
 
-      &::before {
-        content: "";
-        display: table;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: calc(100%);
-        height: calc(100% + 2px);
-        z-index: -1;
-        transform: scaleX(0);
-        transform-origin: left;
+      &:link,
+      &:visited {
+        padding: 3.55rem 0;
+        color: var(--color-tertiary);
+        text-decoration: none;
 
-        transition: transform 0.2s;
-      }
-
-      // Hover Effect when an navigation item is hovered
-      &:hover {
         &::before {
-          transform: scaleX(1);
+          @include pseudoDrying();
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 10rem;
+          width: 10rem;
+          width: 100%;
+          height: calc(100% + 0.2rem);
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.2s;
+        }
+
+        // Hover Effect when a navigation item is hovered
+        &:hover {
+          color: var(--color-tertiary-light);
+          &::before {
+            transform: scaleX(1);
+            border-bottom: 0.2rem solid var(--color-tertiary-light);
+          }
+        }
+
+        //Effect when a navigation item is Active
+        &:active {
+          color: var(--color-tertiary);
           border-bottom: 0.2rem solid var(--color-tertiary-light);
         }
       }
-      // Extending hover effect to Text
-      &:hover &--link {
-        color: var(--color-tertiary-light);
-      }
 
-      &--link {
-        &:link,
-        &:visited {
-          color: var(--color-tertiary);
-          text-decoration: none;
-        }
+      // An active class for active navigation links (current page)
+      &-active {
+        color: var(--color-tertiary);
+        border-bottom: 0.2rem solid var(--color-tertiary);
       }
     }
   }

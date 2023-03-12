@@ -1,1 +1,14 @@
+// Home page
+.home {
+  align-items: stretch;
+  &__duo--1 {
+    flex: 0 1;
+    & h1 {
+      margin: 2.4rem 0;
+    }
+  }
 
+  &__duo--2 {
+    position: relative;
+  }
+}

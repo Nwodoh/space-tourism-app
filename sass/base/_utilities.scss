@@ -2,6 +2,14 @@
   display: none;
 }
 
-.high-font-weight {
-  font-weight: 600 !important;
+.bold-numbers {
+  font-weight: bold !important;
+
+  &__dark {
+    color: var(--color-tertiary-custom-light);
+  }
+
+  &__heading {
+    margin-right: 1.5rem;
+  }
 }
