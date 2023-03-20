@@ -1,0 +1,12 @@
+.app-background {
+  display: inline;
+  position: fixed;
+  background-color: var(--color-primary);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}

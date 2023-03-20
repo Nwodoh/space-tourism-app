@@ -1,7 +1,7 @@
 // Code for our home call to action btn
 .cta {
   // Radius Variable
-  --lenght-radius: 24.7rem;
+  --lenght-radius: 27.4rem;
 
   position: absolute;
   right: 0;
@@ -16,6 +16,19 @@
   color: var(--color-primary);
   background-color: white;
   cursor: pointer;
+
+  // media
+  @include respond(home) {
+    position: relative;
+  }
+
+  @include respond(tab) {
+    --lenght-radius: 24.2rem;
+  }
+
+  @include respond(phone) {
+    --lenght-radius: 15rem;
+  }
 
   &:link,
   :visited,

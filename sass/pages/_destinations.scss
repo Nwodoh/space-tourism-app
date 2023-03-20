@@ -1,14 +1,157 @@
 .destination {
+  margin-bottom: 10rem;
+
+  // media
+  @include respond(destination) {
+    flex-direction: column;
+  }
+
+  // IMAGES
+  &__image {
+    width: 100%;
+    min-width: 15rem;
+
+    // media
+    @include respond(destination) {
+      width: 47.5571%;
+    }
+  }
+
   // Menu ond destionations page
   &__menu {
-    @extend %menuBluePrint;
-    @extend %menuBluePrint;
+    @include menuBluePrint;
 
     &--item {
-      @extend %menuBluePrint--item;
+      @include menuBluePrintItem;
+      padding-bottom: 1rem;
+
+      &:not(:last-child) {
+        padding-right: 3rem;
+      }
+    }
+
+    &--link {
+      &:link,
+      &:visited {
+        padding-bottom: 1rem;
+        @include menuBluePrintFlat;
+        @include menuBluePrintLink;
+        color: var(--color-secondary);
+
+        &::before {
+          @include pseudoDrying();
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: calc(100% + 0.2rem);
+          z-index: -1;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.2s;
+        }
+
+        // Hover Effect when a navigation item is hovered
+        &:hover {
+          // color: var(--color-tertiary-light);
+          &::before {
+            transform: scaleX(1);
+            border-bottom: 0.2rem solid var(--color-tertiary-light);
+          }
+        }
+
+        //Effect when a navigation item is Active
+        &:active {
+          color: var(--color-tertiary);
+          border-bottom: 0.2rem solid var(--color-tertiary-light);
+        }
+      }
+
+      &-active {
+        color: var(--color-tertiary) !important;
+        border-bottom: 0.2rem solid var(--color-tertiary) !important;
+      }
     }
   }
 
   &__duo--1 {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    @media (min-width: 80rem) {
+      left: 6%;
+    }
+
+    // media
+    @include respond(destination) {
+      justify-content: flex-start;
+      flex-basis: content;
+      margin-bottom: 5%;
+    }
+  }
+
+  &__duo--2 {
+    // media
+    @include respond(destination) {
+      align-items: center;
+    }
+
+    // paragraphs
+    & p {
+      // media
+      @include respond(destination) {
+        text-align: center;
+        max-width: 91%;
+      }
+    }
+  }
+
+  &__title {
+    margin: 2rem 0;
+
+    // media
+    @include respond(destination) {
+      margin: 1.5rem 0 1rem 0;
+    }
+  }
+
+  &__description {
+    padding-bottom: 5rem;
+    border-bottom: 1px solid #383b4b;
+    margin-bottom: 2.5rem;
+  }
+
+  &__details {
+    display: flex;
+
+    // media
+    @include respond(destinationPhone) {
+      flex-direction: column;
+    }
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      line-height: 4rem;
+
+      // media
+      @include respond(destinationPhone) {
+        text-align: center;
+      }
+
+      &:not(:last-child) {
+        margin-right: 5rem;
+
+        // media
+        @include respond(destinationPhone) {
+          margin: 0;
+        }
+      }
+    }
+
+    &--heading {
+      color: var(--color-secondary);
+    }
   }
 }

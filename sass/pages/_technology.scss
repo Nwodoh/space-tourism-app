@@ -1,0 +1,135 @@
+.technology {
+  width: calc(100% + 9.5%);
+
+  // media
+  @include respond(technology) {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  &__duo--1 {
+    display: flex;
+    flex-direction: row;
+    flex-grow: grow;
+    height: min-content;
+    align-self: center;
+
+    // media
+    @include respond(technology) {
+      flex-direction: column;
+    }
+  }
+
+  &__duo--2 {
+    flex-basis: content;
+  }
+
+  &__text-content {
+    @include respond(technology) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    & p {
+      @include respond(technology) {
+        text-align: center;
+        max-width: 70%;
+      }
+    }
+  }
+
+  &__picture {
+    @include respond(technology) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      min-width: 5px;
+      border: none;
+    }
+
+    & img {
+      @include respond(technology) {
+        flex: 1 1;
+        min-width: 5px;
+        border: none;
+      }
+    }
+  }
+
+  &__menu {
+    @include menuBluePrint;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 10%;
+    height: 32rem;
+
+    // media
+    @include respond(technology) {
+      flex-direction: row;
+      margin: 5rem 0;
+      height: fit-content;
+      justify-content: center;
+    }
+
+    &--item {
+      @include menuBluePrintItem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 8rem;
+      width: 8rem;
+
+      @include respond(technology) {
+        height: 5.8rem;
+        width: 5.8rem;
+      }
+
+      &:not(:last-child) {
+        // media
+        @include respond(technology) {
+          margin-right: 3%;
+        }
+      }
+    }
+
+    &--link {
+      &:link,
+      &:visited {
+        @include menuBluePrintLink;
+        color: var(--color-tertiary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8rem;
+        width: 8rem;
+        border-radius: 50%;
+        border: 1px solid var(--color-tertiary-custom-light);
+        transition: border 0.2s, background-color 0.2s;
+
+        @include respond(technology) {
+          height: 5.8rem;
+          width: 5.8rem;
+        }
+
+        &:hover {
+          border: 1px solid var(--color-tertiary-light);
+        }
+      }
+      &-active {
+        color: var(--color-primary) !important;
+        background-color: var(--color-tertiary) !important;
+      }
+    }
+  }
+  &__name {
+    min-width: max-content;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+    @include respond(technology) {
+    }
+  }
+}

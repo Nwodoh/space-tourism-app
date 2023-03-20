@@ -30,12 +30,9 @@
 }
 
 html {
-  // font-size of 1rem = 10px
-  //   Aligning the rem size to 10px makes for a more easy calculation and implementation thereofs
+  //   Aligning the rem size to 10px makes for a more easy calculation and implementation thereofs (font-size of 1rem = 10px)
   font-size: 62.5%;
-  background-image: url(../assets/home/background-home-desktop.jpg);
-  background-size: cover;
-  background-clip: top;
+  background-color: var(--color-primary);
 }
 
 body {

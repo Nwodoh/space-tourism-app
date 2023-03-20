@@ -24,16 +24,118 @@
   transition: width 0.2s, height 0.2s, background-color 0.2s, opacity 0.5s;
 }
 
-// This class acts as a blue-print For our app menu's. We use @extend here
-%menuBluePrint {
+// This class acts as a blue-print For our app menu's. We use @mixin here
+@mixin menuBluePrint {
   display: flex;
   align-items: center;
+}
 
-  %menuBluePrint--flat {
-    justify-content: center;
+@mixin menuBluePrintLink {
+  text-decoration: none;
+}
+
+@mixin menuBluePrintFlat {
+  border-bottom: 0.2rem solid transparent;
+
+  //This Positioning is !important because it allows for the bottom-border animation
+  position: relative;
+}
+
+@mixin menuBluePrintItem {
+  list-style: none;
+}
+
+/* MEDIA QUARIES */
+/*
+$breakpoint argument choices:
+
+- 
+
+- phone
+- tab-port
+- tab-land
+- (no need for desktops)
+- big-desktop
+
+PREFERED ORDER of implementing responsiveness: base + typography > general layouts + grid > page layout(page) > components 
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == mainTab {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
   }
 
-  %menuBluePrint--item {
-    list-style: none;
+  @if $breakpoint == navBreak-1 {
+    @media screen and (max-width: 60.94em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == navBreak-2 {
+    @media screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == navBreak-3 {
+    @media screen and (max-width: 36.25em) {
+      @content;
+    }
+  }
+
+  // Official tab
+  @if $breakpoint == tab {
+    @media screen and (max-width: 48em) {
+      @content;
+    }
+  }
+
+  // Official tab
+  @if $breakpoint == phone {
+    @media screen and (max-width: 23.45em) {
+      @content;
+    }
+  }
+
+  /* PAGES */
+  // home
+  @if $breakpoint == home {
+    @media screen and (max-width: 62.5em) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == homePhone {
+    @media screen and (max-width: 31.19em) {
+      @content;
+    }
+  }
+
+  // Destination
+  @if $breakpoint == destination {
+    @media screen and (max-width: 69.69em) {
+      @content;
+    }
+  }
+  @if $breakpoint == destinationPhone {
+    @media screen and (max-width: 24.38em) {
+      @content;
+    }
+  }
+
+  // Crew
+  @if $breakpoint == crew {
+    @media screen and (max-width: 79.38em) {
+      @content;
+    }
+  }
+
+  // Technology
+  @if $breakpoint == technology {
+    @media screen and (max-width: 80.31em) {
+      @content;
+    }
   }
 }

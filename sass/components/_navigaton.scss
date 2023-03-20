@@ -4,15 +4,18 @@
   align-items: center;
   margin-left: 4%;
   margin-top: 3rem;
-  //   FOR tab mar-L is 5%
+
+  // media
+  @include respond(navBreak-3) {
+    margin: 2rem 4%;
+  }
 
   &__logo {
     width: 4.8rem;
   }
 
   &__menu {
-    @extend %menuBluePrint;
-    @extend %menuBluePrint--flat;
+    @include menuBluePrint;
 
     justify-content: center;
     flex: 0 1 60%;
@@ -25,6 +28,33 @@
     // Setting the postion here to enable the position absolute set on elements after pseudo element
     position: relative;
 
+    transition: transform 0.2s;
+
+    // media
+    @include respond(navBreak-3) {
+      // display: none;
+      z-index: 5;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      height: 100vh;
+      width: 80vw;
+      position: fixed;
+      top: 0;
+      right: 0;
+      padding-top: 11.8rem;
+
+      transform-origin: right;
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    // When menu is active (small Screen)
+    &-active {
+      opacity: 1;
+      transform: scaleX(1) !important;
+    }
+
     // Design line that runs just before the menu items, only seen on Large screens (desktops)
     &::after {
       @include pseudoDrying();
@@ -35,38 +65,61 @@
       left: -26%;
       transform: translate(-50%, -50%);
       border-bottom: 2px solid var(--color-tertiary-medium-light);
+
+      @include respond(navBreak-2) {
+        display: none;
+      }
     }
 
     &--item {
-      @extend %menuBluePrint--item;
+      @include menuBluePrintItem;
       padding: 3.75rem 0;
       margin-left: 4.8rem;
+
+      // media
+      @include respond(navBreak-3) {
+        padding: 0;
+        display: block;
+        width: 85%;
+      }
     }
     &--link {
-      border-bottom: 0.2rem solid transparent;
-
-      //This Positioning is !important because it allows for the bottom-border animation
-      position: relative;
-
       &:link,
       &:visited {
+        @include menuBluePrintFlat;
+        @include menuBluePrintLink;
         padding: 3.55rem 0;
+        height: 100%;
         color: var(--color-tertiary);
-        text-decoration: none;
+        transition: color 0.2s;
+        position: relative;
+
+        // media
+        @include respond(navBreak-3) {
+          padding: 2.5rem 0;
+          display: block;
+          border-right: 1rem solid transparent;
+        }
 
         &::before {
           @include pseudoDrying();
           position: absolute;
           top: 0;
           left: 0;
-          height: 10rem;
-          width: 10rem;
           width: 100%;
           height: calc(100% + 0.2rem);
           z-index: -1;
           transform: scaleX(0);
           transform-origin: left;
           transition: transform 0.2s;
+
+          // media
+          @include respond(navBreak-3) {
+            height: 100%;
+            // transform-origin: top;
+            transform: scaleY(0);
+            width: calc(100% + 1rem);
+          }
         }
 
         // Hover Effect when a navigation item is hovered
@@ -75,6 +128,13 @@
           &::before {
             transform: scaleX(1);
             border-bottom: 0.2rem solid var(--color-tertiary-light);
+
+            // media
+            @include respond(navBreak-3) {
+              transform: scaleY(1);
+              border-bottom: 0;
+              border-right: 1rem solid var(--color-tertiary-light);
+            }
           }
         }
 
@@ -82,13 +142,113 @@
         &:active {
           color: var(--color-tertiary);
           border-bottom: 0.2rem solid var(--color-tertiary-light);
+
+          // media
+          @include respond(navBreak-3) {
+            border-bottom: 0;
+            border-right: 1rem solid var(--color-tertiary-light);
+          }
         }
       }
 
       // An active class for active navigation links (current page)
       &-active {
-        color: var(--color-tertiary);
-        border-bottom: 0.2rem solid var(--color-tertiary);
+        color: var(--color-tertiary) !important;
+        border-bottom: 0.2rem solid var(--color-tertiary) !important;
+
+        // media
+        @include respond(navBreak-3) {
+          border-bottom: 0 !important;
+          border-right: 1rem solid var(--color-tertiary) !important;
+        }
+      }
+
+      & .bold-numbers {
+        // MEDIA
+        @include respond(navBreak-1) {
+          display: none;
+        }
+        @include respond(navBreak-3) {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    height: 7rem;
+    width: 7rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    position: fixed;
+    right: 4%;
+    cursor: pointer;
+
+    @include respond(navBreak-3) {
+      display: flex;
+    }
+
+    &:hover &-bar::after {
+      transform: translateY(1.2rem);
+      width: 100%;
+    }
+
+    &:hover &-bar::before {
+      transform: translateY(-1.2rem);
+      width: 100%;
+    }
+
+    &-bar {
+      &,
+      &::after,
+      &::before {
+        position: absolute;
+        width: 60%;
+        height: 0.3rem;
+        border-radius: 40px;
+        background-color: var(--color-secondary);
+      }
+
+      & {
+        display: inline-block;
+        position: relative;
+      }
+
+      &::after,
+      &::before {
+        content: "";
+        display: table;
+        position: absolute;
+        transition: all 0.3s;
+      }
+
+      &::after {
+        transform: translateY(1rem);
+      }
+
+      &::before {
+        transform: translateY(-1rem);
+      }
+
+      &-active {
+        &.nav__icon-bar {
+          background-color: transparent;
+        }
+        &::after,
+        &::before {
+          opacity: 1 !important;
+          width: 100%;
+        }
+        &::after {
+          opacity: 1 !important;
+          transform: rotate(-225deg) !important;
+        }
+
+        &::before {
+          transform: rotate(225deg) !important;
+        }
       }
     }
   }

@@ -2,11 +2,27 @@
   "home": {
     "headings": {
       "headingOne": "SO, YOU WANT TO TRAVEL TO",
-      "headingTwo": "SPACE"
+      "headingTwo": "SPACE",
+      "bkgImage": {
+        "mobile": "url('../assets/home/background-home-mobile.jpg')",
+        "tablet": "url('../assets/home/background-home-tablet.jpg')",
+        "desktop": "url('../assets/home/background-home-desktop.jpg')"
+      }
     },
     "description": "Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!"
   },
-  "destinations": [
+  "destination": [
+    {
+      "pageDetail": true,
+      "name": "destination",
+      "pageNumber": "01",
+      "pageDescription": "Pick your destination",
+      "bkgImage": {
+        "mobile": "url('../assets/destination/background-destination-mobile.jpg')",
+        "tablet": "url('../assets/destination/background-destination-tablet.jpg')",
+        "desktop": "url('../assets/destination/background-destination-desktop.jpg')"
+      }
+    },
     {
       "name": "Moon",
       "images": {
@@ -50,6 +66,17 @@
   ],
   "crew": [
     {
+      "pageDetail": true,
+      "name": "crew",
+      "pageNumber": "02",
+      "pageDescription": "Meet your crew",
+      "bkgImage": {
+        "mobile": "url('../assets/crew/background-crew-mobile.jpg')",
+        "tablet": "url('../assets/crew/background-crew-tablet.jpg')",
+        "desktop": "url('../assets/crew/background-crew-desktop.jpg')"
+      }
+    },
+    {
       "name": "Douglas Hurley",
       "images": {
         "png": "./assets/crew/image-douglas-hurley.png",
@@ -87,6 +114,17 @@
     }
   ],
   "technology": [
+    {
+      "pageDetail": true,
+      "name": "technology",
+      "pageNumber": "03",
+      "pageDescription": "Space launch 101",
+      "bkgImage": {
+        "mobile": "url('../assets/technology/background-technology-mobile.jpg')",
+        "tablet": "url('../assets/technology/background-technology-tablet.jpg')",
+        "desktop": "url('../assets/technology/background-technology-desktop.jpg')"
+      }
+    },
     {
       "name": "Launch vehicle",
       "images": {
