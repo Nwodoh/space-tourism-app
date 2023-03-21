@@ -49,8 +49,11 @@ class navigation extends AppView {
       return this.newActiveLink(undefined, "nav__menu--link", pageName);
   }
 
-  async pageManager(pageName, handle, navLink) {
-    // Making a nav class active1
+  async pageManager(pageName = "home", handle, navLink) {
+    // NULLISH PAGE NAME CHECK
+    if (!pageName) pageName = "home";
+    
+    // Making a nav class active
     this._navActiveLink(navLink, pageName);
 
     // handling subscriber handle for model.setCurrPage
