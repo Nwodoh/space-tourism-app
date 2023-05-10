@@ -37,8 +37,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/Cross-companion/space-tourism-app)
-- Live Site URL: [Add live site URL here](https://space-tourism-app-omega.vercel.app)
+- Solution URL: [Git Link](https://github.com/Cross-companion/space-tourism-app)
+- Live Site URL: [Live Site](https://space-tourism-app-omega.vercel.app)
 
 ## My process
 
