@@ -79,6 +79,6 @@ Going on From Here, I would continue my Learning learnings with React and Next.j
 ## Author
 
 - Website - Nwodoh Daniel
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Cross-companion)
-- Twitter - [@yourusername](https://www.twitter.com/Cross_companion)
+- Frontend Mentor - [@Cross-companion](https://www.frontendmentor.io/profile/Cross-companion)
+- Twitter - [@Cross_companion](https://www.twitter.com/Cross_companion)
 
