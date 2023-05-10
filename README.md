@@ -27,13 +27,13 @@ Users should be able to:
 
 ### Screenshot
 
-![Home Page](./screeshots/home.png)
+![Home Page](./screenshots/home.png)
 
-![Destinations Page](./screeshots/destination.png)
+![Destinations Page](./screenshots/destination.png)
 
-![Crew Page](./screeshots/crew.png)
+![Crew Page](./screenshots/crew.png)
 
-![Vehicles Page](./screeshots/vehicle.png)
+![Vehicles Page](./screenshots/vehicle.png)
 
 ### Links
 
